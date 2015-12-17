@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>autorisiert.net</title>
+
+		<!-- for FF, Chrome, Opera -->
+		<link rel="icon" type="image/png" href="pics/pacman-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="pics/pacman-32x32.png" sizes="32x32">
+
+		<!-- for IE -->
+		<link rel="icon" type="image/x-icon" href="pics/pacman.ico" >
+		<link rel="shortcut icon" type="image/x-icon" href="pics/pacman.ico"/>
+		
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
+		<script type="text/javascript" src="prettify/prettify.js"></script>
+		<link href="prettify/desert.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<script type="text/javascript">
+		var activenav = "#home";
+		$(document).ready(function() {
+			setupAjax();
+			$("#m-navbar a, #m-navbar-right a").click(function(event){
+				openTemplate($(this).attr("href"));
+			});
+			var currentHash = window.location.hash;
+			console.log(currentHash);
+			if(currentHash.indexOf("#")<0){
+				currentHash = activenav;
+			}
+			openTemplate(currentHash);
+		});
+		function openTemplate(template){
+			if(template==""){template="home";}
+			else{template=template.substring(1);}
+			$("#m-maincontent").load("template/"+template);
+			var old_li = findLiForHash(activenav);
+			old_li.removeClass("active");
+			var new_li = findLiForHash("#"+template);
+			new_li.addClass("active");
+			activenav = "#"+template;
+		}
+		function findLiForHash(hash){
+			return $("#m-navbar")
+					.find("a[href='"+hash+"']")
+					.closest("li");
+		}
+		function setupAjax(){
+			$( document ).ajaxStart(function() {
+				$("#m-ajax-spinner").show();
+			});
+			$( document ).ajaxStop(function() {
+				$("#m-ajax-spinner").hide();
+			});
+		}
+		</script>
+		
+	</head>
+	<body>
+	<div id="m-ajax-spinner" class="m-top-left spinner" style="display: none;">&nbsp;</div>
+	
+	
+	<div role="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">autorisiert.net</div>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul id="m-navbar" class="nav navbar-nav">
+            <li class="active"><a href="#home">Home</a></li>
+			<li><a href="#devnews">#Dev News</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+		  <ul id="m-navbar-right" class="nav navbar-nav navbar-right">
+            <!--<li><a href="#blog">Blog</a></li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+	</div>
+	
+	
+	<div id="m-maincontent" class="container-fluid">
+		
+	</div>
+    
+	</body>
+</html>

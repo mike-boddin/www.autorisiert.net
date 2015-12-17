@@ -1,0 +1,8 @@
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="jumbotron">
+			<h2>Welcome to autorisiert.net</h2>
+			<p>Look and feel of this site is powered by the <a target="_blank" href="http://getbootstrap.com">Bootstrap-Framework</a>.</p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<script id="twitter-wjs" type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+<div class="row">
+	<div class="col-md-4 col-md-offset-1">
+		<a class="twitter-timeline"  
+		href="https://twitter.com/Zottelplotz/lists/dev" 
+		data-widget-id="570326361471201280"
+		data-tweet-limit="20"
+		>
+			Your Social Media Settings seems to be safe ;-)
+		</a>
+	</div>
+	
+	<div class="col-md-6 col-md-offset-1">
+		<div class="jumbotron">
+			<h2>How does it work?</h2>
+			<p>You need to include:</p>
+			<p>
+			<pre class="prettyprint lang-yaml">
+&lt;script  id="twitter-wjs" type="text/javascript" 
+	src="https://platform.twitter.com/widgets.js"&gt;
+&lt;a	class="twitter-timeline"  
+	href="https://twitter.com/Zottelplotz/lists/dev" 
+	data-widget-id="570326361471201280"
+	data-tweet-limit="20"&gt;
+	Your Social Media Settings seems to be safe ;-)
+&lt;/a&gt;</pre>
+<a href="https://dev.twitter.com/web/embedded-timelines" target="_blank">(more information at dev.twitter.com)</a>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		prettyPrint();
+	</script>
+</div>
