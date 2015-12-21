@@ -18,56 +18,13 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
 		<script type="text/javascript" src="prettify/prettify.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 		<link href="prettify/desert.css" type="text/css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="css/main.css" type="text/css">
-		<script type="text/javascript">
-		var activenav = "#home";
-		$(document).ready(function() {
-			setupAjax();
-			loadVersion();
-			$("#m-navbar a, #m-navbar-right a").click(function(event){
-				openTemplate($(this).attr("href"));
-			});
-			var currentHash = window.location.hash;
-			console.log(currentHash);
-			if(currentHash.indexOf("#")<0){
-				currentHash = activenav;
-			}
-			openTemplate(currentHash);
-		});
-		function openTemplate(template){
-			if(template==""){template="home";}
-			else{template=template.substring(1);}
-			$("#m-maincontent").load("template/"+template);
-			var old_li = findLiForHash(activenav);
-			old_li.removeClass("active");
-			var new_li = findLiForHash("#"+template);
-			new_li.addClass("active");
-			activenav = "#"+template;
-		}
-		function findLiForHash(hash){
-			return $("#m-navbar")
-					.find("a[href='"+hash+"']")
-					.closest("li");
-		}
-		function setupAjax(){
-			$( document ).ajaxStart(function() {
-				$("#m-ajax-spinner").show();
-			});
-			$( document ).ajaxStop(function() {
-				$("#m-ajax-spinner").hide();
-			});
-		}
-		function loadVersion(){
-			$("#m-version-footer").load("version.txt");
-		}
-		</script>
-		
 	</head>
 	<body>
 	<div id="m-ajax-spinner" class="m-top-left spinner" style="display: none;">&nbsp;</div>
-	
 	
 	<div role="navigation" class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -99,7 +56,9 @@
 	</div>
 	<div class="m-footer">
 		<div class="container">
-			<a href="https://github.com/mike-boddin/www.autorisiert.net" target="_blank">#<span id="m-version-footer">xxx</span></a>
+			<a href="https://github.com/mike-boddin/www.autorisiert.net" target="_blank">
+				#<span id="m-version-footer"></span>
+			</a>
 		</div>
 	</div>
     
