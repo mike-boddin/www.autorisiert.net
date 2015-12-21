@@ -25,6 +25,7 @@
 		var activenav = "#home";
 		$(document).ready(function() {
 			setupAjax();
+			loadVersion();
 			$("#m-navbar a, #m-navbar-right a").click(function(event){
 				openTemplate($(this).attr("href"));
 			});
@@ -57,6 +58,9 @@
 			$( document ).ajaxStop(function() {
 				$("#m-ajax-spinner").hide();
 			});
+		}
+		function loadVersion(){
+			$("#m-version-footer").load("version.txt");
 		}
 		</script>
 		
@@ -92,6 +96,11 @@
 	
 	<div id="m-maincontent" class="container-fluid">
 		
+	</div>
+	<div class="m-footer">
+		<div class="container">
+			<a href="https://github.com/mike-boddin/www.autorisiert.net" target="_blank">#<span id="m-version-footer">xxx</span></a>
+		</div>
 	</div>
     
 	</body>
