@@ -2,6 +2,11 @@ body {
 	padding-top: 70px;
 }
 
+hr {
+	background-color: #fff;
+	border-top: 2px dashed #8c8b8b;
+}
+
 .m-top-left {
 	left: 0;
     position: fixed;
