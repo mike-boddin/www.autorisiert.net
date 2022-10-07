@@ -27,7 +27,7 @@
 					<strong>PGP-ID & Fingerprint</strong>
 				</div>
 				<div class="col-sm-10">
-				<pre>0x5655DDC2F7DD4D0B</pre>
+				<code>0x5655DDC2F7DD4D0B</code>
 				<br/>
 					<code>F811 F25E F216 55BE 0BB3 A99C 5655 DDC2 F7DD 4D0B</code>
 				</div>
